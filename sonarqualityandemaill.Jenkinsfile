@@ -73,8 +73,8 @@ pipeline {
             steps {
                 script {
                     echo 'deploying the java-maven-app to kubernetes cluster from jenkins'
-                    sh 'envsubst < /var/jenkins_home/workspace/kubernetes/deployment.yaml | kubectl apply -f - '
-                    sh 'envsubst < /var/jenkins_home/workspace/kubernetes/service.yaml | kubectl apply -f - '
+                    sh 'envsubst < kubernetes/deployment.yaml | kubectl apply -f - '
+                    sh 'envsubst < kubernetes/service.yaml | kubectl apply -f - '
                     sh 'kubectl get pod '
                     sh 'kubectl get all'
                 }
