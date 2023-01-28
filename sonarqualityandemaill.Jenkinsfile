@@ -33,9 +33,9 @@ pipeline {
             steps {
                 script {withSonarQubeEnv(credentialsId: 'sonar') {
                     sh 'mvn clean verify sonar:sonar \
-                        -Dsonar.projectKey=maven-project \
-                        -Dsonar.host.url=http://65.0.183.80:9000 \
-                        -Dsonar.login=sqp_1e34feed7368c3252d81d0d496c8b253d707dc9a '
+                        -Dsonar.projectKey=javaapp \
+                        -Dsonar.host.url=http://3.111.33.144:9000 \
+                        -Dsonar.login=sqp_34de0a3d728d60e11d591ddf91f0096a3d0920d8'
                     }
                 }
             }
