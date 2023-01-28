@@ -45,8 +45,8 @@ pipeline {
                 script{
                     timeout(time: 1, unit: 'HOURS') {
                     def qg = waitForQualityGate()
-                    if (qg.status != 'OK') {
-                         
+                    if (qg.status == 'OK') {
+                          emailext body: 'sonarqube quality gate was failed', recipientProviders: [developers()], subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', to: 'bagavath0518@gmail.com,dheebanraaja@gmail.com'
                           error "Pipeline aborted due to quality gate failure: ${qg.status}"
                        }
                     }
