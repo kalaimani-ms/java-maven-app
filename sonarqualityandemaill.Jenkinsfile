@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent EKS
+    agent any
     tools {
         maven 'Maven'
     }
